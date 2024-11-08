@@ -8,11 +8,12 @@ import { CommonModule } from '@angular/common';
   selector: 'app-edit-item',
   standalone: true,
   imports: [FormsModule, CommonModule],
+  providers: [ApiService],
   templateUrl: './edit-item.component.html',
   styleUrls: ['./edit-item.component.css']
 })
 export class EditItemComponent implements OnInit {
-  item = { name: '' };
+  item = { nombre: '', descripcion: '' };
   itemId!: number;
 
   constructor(
