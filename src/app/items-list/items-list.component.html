@@ -1,0 +1,17 @@
+<h2>Items List</h2>
+<a routerLink="/add">Add New Item</a>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Actions</th>
+  </tr>
+  <tr *ngFor="let item of items">
+    <td>{{ item.id }}</td>
+    <td>{{ item.name }}</td>
+    <td>
+      <button (click)="deleteItem(item.id)">Delete</button>
+      <a [routerLink]="['/edit', item.id]">Edit</a>
+    </td>
+  </tr>
+</table>
