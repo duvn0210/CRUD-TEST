@@ -1,0 +1,34 @@
+<h2>Pokémones</h2>
+
+<table *ngIf="!showFiltered">
+  <tr>
+    <th>Nombre</th>
+    <th>Descripción</th>
+  </tr>
+  <tr *ngFor="let pokemon of pokemons">
+    <td>{{ pokemon.nombre }}</td>
+    <td>{{ pokemon.descripcion }}</td>
+  </tr>
+</table>
+
+<!-- Mostrar Pokémon filtrados (con ataque mayor a 50) -->
+<table *ngIf="showFiltered">
+  <tr>
+    <th>Nombre</th>
+    <th>Descripción</th>
+  </tr>
+  <tr *ngFor="let pokemon of filteredPokemons">
+    <td>{{ pokemon.nombre }}</td>
+    <td>{{ pokemon.descripcion }}</td>
+  </tr>
+</table>
+
+<!-- Botón para cambiar entre mostrar todos los Pokémon o los filtrados -->
+<div *ngIf="!showFiltered">
+  <button (click)="showPokemonsWithHighAttack()">Mostrar Pokémon con poder mayor a 50</button>
+</div>
+
+<!-- Botón para volver a mostrar todos los Pokémon -->
+<div *ngIf="showFiltered">
+  <button (click)="showAllPokemons()">Mostrar Todos los Pokémon</button>
+</div>
