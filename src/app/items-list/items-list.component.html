@@ -3,15 +3,17 @@
 <table>
   <tr>
     <th>ID</th>
-    <th>Name</th>
-    <th>Actions</th>
+    <th>Nombre</th>
+    <th>Descripción</th>
+    <th>Acciones</th>
   </tr>
   <tr *ngFor="let item of items">
     <td>{{ item.id }}</td>
-    <td>{{ item.name }}</td>
+    <td>{{ item.nombre }}</td>
+    <td>{{ item.descripcion }}</td> 
     <td>
-      <button (click)="deleteItem(item.id)">Delete</button>
-      <a [routerLink]="['/edit', item.id]">Edit</a>
+      <button (click)="deleteItem(item.id)">Eliminar</button>
+      <a id="editButton" [routerLink]="['/edit', item.id]">Actualizar</a>
     </td>
   </tr>
 </table>
