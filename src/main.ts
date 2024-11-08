@@ -7,12 +7,13 @@ import { EditItemComponent } from './app/edit-item/edit-item.component';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { importProvidersFrom } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { PokeListComponent } from './app/poke-list/poke-list.component';
 
 const routes: Route[] = [
-  { path: '', component: ItemsListComponent },        // Ruta para listar ítems
-  { path: 'add', component: AddItemComponent },       // Ruta para agregar un ítem
-  { path: 'edit/:id', component: EditItemComponent }, // Ruta para editar un ítem específico
-];
+  { path: '', component: ItemsListComponent },        
+  { path: 'add', component: AddItemComponent },       
+  { path: 'edit/:id', component: EditItemComponent }, 
+  { path: 'pokemons', component: PokeListComponent }];
 
 bootstrapApplication(AppComponent, {
   providers: [
