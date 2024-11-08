@@ -34,8 +34,10 @@ export class ApiService {
   }
 
   // Método para eliminar un item
-  deleteItem(id: number): Observable<any> {
-    const params = new HttpParams().set('id', id.toString());
-    return this.http.delete(`${this.apiUrl}/delete`, { params });
+  deleteItem(id: number) {
+    return this.http.delete(`${this.apiUrl}/delete`, {
+      body: { id: id },
+    });
   }
+  
 }

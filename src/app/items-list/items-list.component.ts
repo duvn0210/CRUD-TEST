@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common';
   selector: 'app-items-list',
   standalone: true,
   imports: [RouterModule, CommonModule],
+  providers: [ApiService],
   templateUrl: './items-list.component.html',
   styleUrls: ['./items-list.component.css']
 })
@@ -27,7 +28,7 @@ export class ItemsListComponent implements OnInit {
 
   deleteItem(id: number): void {
     this.apiService.deleteItem(id).subscribe(() => {
-      this.getItems(); // Actualizar la lista después de eliminar
+      this.getItems();
     });
   }
 }

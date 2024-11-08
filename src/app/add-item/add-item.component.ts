@@ -8,17 +8,18 @@ import { CommonModule } from '@angular/common';
   selector: 'app-add-item',
   standalone: true,
   imports: [FormsModule, CommonModule],
+  providers: [ApiService],
   templateUrl: './add-item.component.html',
   styleUrls: ['./add-item.component.css']
 })
 export class AddItemComponent {
-  item = { name: '' };
+  item = { nombre: '', descripcion: '' };  
 
   constructor(private apiService: ApiService, private router: Router) {}
 
   addItem(): void {
     this.apiService.addItem(this.item).subscribe(() => {
-      this.router.navigate(['/']); // Volver a la lista después de agregar
+      this.router.navigate(['/']); 
     });
   }
 }
